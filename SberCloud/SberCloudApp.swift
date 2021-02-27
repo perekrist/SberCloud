@@ -11,7 +11,7 @@ import SwiftUI
 struct SberCloudApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+          AutorizationView()
         }
     }
 }

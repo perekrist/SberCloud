@@ -22,6 +22,8 @@
 		CA431AD925EA0E5600393A11 /* SBSansText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = CA431ACC25EA08FA00393A11 /* SBSansText-Medium.otf */; };
 		CA431ADA25EA0E5600393A11 /* SBSansText-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CA431AC725EA08F900393A11 /* SBSansText-Semibold.otf */; };
 		CA431ADB25EA0E5600393A11 /* SBSansText-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = CA431AB825EA08F800393A11 /* SBSansText-Thin.otf */; };
+		CA46DD3125EA1DC6001AF2B4 /* AutorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46DD3025EA1DC6001AF2B4 /* AutorizationView.swift */; };
+		CA46DD3525EA2B7F001AF2B4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46DD3425EA2B7F001AF2B4 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		CA431ACB25EA08FA00393A11 /* SBSansText-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SBSansText-Regular.otf"; sourceTree = "<group>"; };
 		CA431ACC25EA08FA00393A11 /* SBSansText-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SBSansText-Medium.otf"; sourceTree = "<group>"; };
 		CA431AD125EA0A2E00393A11 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		CA46DD3025EA1DC6001AF2B4 /* AutorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutorizationView.swift; sourceTree = "<group>"; };
+		CA46DD3425EA2B7F001AF2B4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,10 +78,10 @@
 		CA431A8925E9417F00393A11 /* SberCloud */ = {
 			isa = PBXGroup;
 			children = (
+				CA46DD3325EA2B70001AF2B4 /* Services */,
+				CA46DD2E25EA1D97001AF2B4 /* Modules */,
 				CA431AB125EA08E000393A11 /* Fonts */,
 				CA431AAD25EA017900393A11 /* Utils */,
-				CA431AA825E9FE8C00393A11 /* MainView */,
-				CA431A9F25E9FD0C00393A11 /* Slide Menu */,
 				CA431A8A25E9417F00393A11 /* SberCloudApp.swift */,
 				CA431A8E25E9418500393A11 /* Assets.xcassets */,
 				CA431A9325E9418500393A11 /* Info.plist */,
@@ -131,6 +135,32 @@
 				CA431AB825EA08F800393A11 /* SBSansText-Thin.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CA46DD2E25EA1D97001AF2B4 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				CA46DD2F25EA1DAA001AF2B4 /* Aitorization */,
+				CA431AA825E9FE8C00393A11 /* MainView */,
+				CA431A9F25E9FD0C00393A11 /* Slide Menu */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		CA46DD2F25EA1DAA001AF2B4 /* Aitorization */ = {
+			isa = PBXGroup;
+			children = (
+				CA46DD3025EA1DC6001AF2B4 /* AutorizationView.swift */,
+			);
+			path = Aitorization;
+			sourceTree = "<group>";
+		};
+		CA46DD3325EA2B70001AF2B4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CA46DD3425EA2B7F001AF2B4 /* NetworkService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,8 +248,10 @@
 				CA431AA525E9FE3700393A11 /* SlidingMenuView.swift in Sources */,
 				CA431AD225EA0A2E00393A11 /* Fonts.swift in Sources */,
 				CA431AAF25EA019600393A11 /* UIColor+Hex.swift in Sources */,
+				CA46DD3125EA1DC6001AF2B4 /* AutorizationView.swift in Sources */,
 				CA431A8B25E9417F00393A11 /* SberCloudApp.swift in Sources */,
 				CA431AAA25E9FE9500393A11 /* MainView.swift in Sources */,
+				CA46DD3525EA2B7F001AF2B4 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

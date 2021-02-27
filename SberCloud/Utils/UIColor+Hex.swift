@@ -35,4 +35,8 @@ extension Color {
     static let light = UIColor(hexString: "00956F").uiColor
     static let dark = UIColor(hexString: "07E897").uiColor
   }
+  struct gray {
+    static let dark = UIColor(hexString: "120E21").uiColor
+    static let ultraDark = UIColor(hexString: "343F48").uiColor
+  }
 }
