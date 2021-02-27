@@ -15,3 +15,12 @@ extension NetworkService: AuthorizationNetworkProtocol {
     }
   }
 }
+
+extension NetworkService: ChartsNetworkProtocol {
+  func getProjects(completion: @escaping (TokenResponse) -> Void) {
+    let headers: HTTPHeaders = [HTTPHeader.authorization(UserDefaults.standard.value(forKey: "token") as? String ?? "")]
+    baseRequest(url: "/projects", method: .post, headers: headers) { response in
+      completion(response)
+    }
+  }
+}

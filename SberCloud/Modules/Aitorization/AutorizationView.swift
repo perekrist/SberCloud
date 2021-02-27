@@ -23,7 +23,7 @@ struct AutorizationView: View {
         ZStack {
           Color.white.opacity(0.24).blur(radius: 32)
           VStack {
-            Text("Sign-up").font(Font.bold27).foregroundColor(Color.gray.dark)
+            Text("Log in").font(Font.bold27).foregroundColor(Color.gray.dark)
               .padding(.vertical, 33)
             TextField("Nickname", text: $nickname)
               .padding()
@@ -48,10 +48,11 @@ struct AutorizationView: View {
         Button(action: {
           NetworkService.shared.login(withNickname: nickname, password: password) { response in
             UserDefaults.standard.setValue(response.token, forKey: "token")
+            UserDefaults.standard.setValue(nickname, forKey: "name")
             onDidAutorize?()
           }
         }) {
-          Text("Discover the platform")
+          Text("Log in")
             .foregroundColor(Color.gray.ultraDark)
             .font(Font.light18)
             .padding(.vertical, 16)

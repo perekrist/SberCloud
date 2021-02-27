@@ -6,19 +6,16 @@
 import SwiftUI
 
 struct MainView: View {
-  
-  let buttons = [  MenuButton(text: "Elastic Cloud Server", action: {print("potato")}),
-                   MenuButton(text: "Relational Database Servece", action: {print("you pressed the save button")}),
-                   MenuButton(text: "Bare Metal Server", action: {print("you pressed the save button")}),
-                   MenuButton(text: "Virtual Private Cloud", action: {print("you pressed the save button")}),
-                   MenuButton(text: "Elastic Load Balance", action: {print("you pressed the save button")}),
-                   MenuButton(text: "Elastic IP", action: {print("you pressed the save button")})
-  ]
+  var onDidRequestToLogOut: (() -> Void)?
+  let buttons = [ MenuButton(text: "Cloud Eye", action: {print("1")}),
+                  MenuButton(text: "Cloud Trace Service", action: {print("2")}),
+                  MenuButton(text: "Application Operations Management ", action: {print("3")}),
+                  MenuButton(text: "Application Performance Management", action: {print("4")}) ]
   @State var menuShown = false
   
   var body: some View {
     ZStack {
-      SlidingMenuView(buttons: buttons)
+      SlidingMenuView(onDidRequestToLogOut: onDidRequestToLogOut, buttons: buttons)
       //Foreground View
       ZStack {
         Color.white.edgesIgnoringSafeArea(.all)
@@ -26,7 +23,7 @@ struct MainView: View {
           Spacer().frame(height:UIApplication.shared.windows.first?.safeAreaInsets.top)
           HStack {
             Button(action: {
-                    self.menuShown.toggle()
+              self.menuShown.toggle()
             }) {
               Image(systemName: "ellipsis")
                 .padding()
@@ -41,6 +38,10 @@ struct MainView: View {
       .scaleEffect(menuShown ? 0.9 : 1)
       .offset(x: menuShown ? 300 : 0)
       .animation(.easeInOut(duration: 0.3))
+    }.onAppear {
+      NetworkService.shared.getProjects { response in
+        
+      }
     }
   }
 }

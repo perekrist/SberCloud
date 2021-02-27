@@ -13,7 +13,7 @@ struct MenuButton: Identifiable {
 }
 
 struct SlidingMenuView: View {
-  
+  var onDidRequestToLogOut: (() -> Void)?
   var buttons: [MenuButton]
   var body: some View {
     ZStack {
@@ -28,7 +28,7 @@ struct SlidingMenuView: View {
             // Profile
           }) {
             HStack {
-              Text("Kristina\nPeregudova").bold()
+              Text(UserDefaults.standard.string(forKey: "name") ?? "-").bold()
             }.padding(.leading, 50).foregroundColor(.white).font(Font.Sans18.bold)
           }
           Divider().background(Color.white).frame(width: 235, height: 2).padding(.leading, 20)
@@ -38,12 +38,15 @@ struct SlidingMenuView: View {
             }) {
               HStack {
                 Text(thisButton.text)
+                  .multilineTextAlignment(.leading)
               }.padding(.leading, 50).foregroundColor(.white).font(Font.Sans18.light)
+              .frame(width: 300)
             }
           }
           Divider().background(Color.white).frame(width: 235, height: 2).padding(.leading, 20)
           Button(action: {
-            // Log out
+            UserDefaults.standard.set("", forKey: "token")
+            onDidRequestToLogOut?()
           }) {
             HStack {
               Text("Log Out")
