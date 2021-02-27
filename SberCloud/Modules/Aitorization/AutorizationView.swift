@@ -7,6 +7,7 @@ import SwiftUI
 import SwiftUIX
 
 struct AutorizationView: View {
+  @State var onDidAutorize: (() -> Void)?
   @State private var nickname = "hackathon104"
   @State private var password = "Qui1n87Tea5m3"
   
@@ -45,7 +46,10 @@ struct AutorizationView: View {
         .frame(height: 279)
         
         Button(action: {
-          // Log in
+          NetworkService.shared.login(withNickname: nickname, password: password) { response in
+            UserDefaults.standard.setValue(response.token, forKey: "token")
+            onDidAutorize?()
+          }
         }) {
           Text("Discover the platform")
             .foregroundColor(Color.gray.ultraDark)

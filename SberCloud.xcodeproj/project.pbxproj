@@ -24,6 +24,10 @@
 		CA431ADB25EA0E5600393A11 /* SBSansText-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = CA431AB825EA08F800393A11 /* SBSansText-Thin.otf */; };
 		CA46DD3125EA1DC6001AF2B4 /* AutorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46DD3025EA1DC6001AF2B4 /* AutorizationView.swift */; };
 		CA46DD3525EA2B7F001AF2B4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46DD3425EA2B7F001AF2B4 /* NetworkService.swift */; };
+		CA46DD3925EA2BFE001AF2B4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CA46DD3825EA2BFE001AF2B4 /* Alamofire */; };
+		CA46DD3C25EA2C70001AF2B4 /* NetworkServiceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46DD3B25EA2C70001AF2B4 /* NetworkServiceProtocols.swift */; };
+		CA46DD4025EA2CDA001AF2B4 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46DD3F25EA2CDA001AF2B4 /* TokenResponse.swift */; };
+		CA46DD4425EA2DBF001AF2B4 /* NetworkService+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46DD4325EA2DBF001AF2B4 /* NetworkService+Protocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +49,9 @@
 		CA431AD125EA0A2E00393A11 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		CA46DD3025EA1DC6001AF2B4 /* AutorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutorizationView.swift; sourceTree = "<group>"; };
 		CA46DD3425EA2B7F001AF2B4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		CA46DD3B25EA2C70001AF2B4 /* NetworkServiceProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocols.swift; sourceTree = "<group>"; };
+		CA46DD3F25EA2CDA001AF2B4 /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
+		CA46DD4325EA2DBF001AF2B4 /* NetworkService+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkService+Protocols.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +60,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA431A9C25E9FBE400393A11 /* SwiftUIX in Frameworks */,
+				CA46DD3925EA2BFE001AF2B4 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,9 +166,20 @@
 		CA46DD3325EA2B70001AF2B4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CA46DD3E25EA2CCA001AF2B4 /* Responses */,
 				CA46DD3425EA2B7F001AF2B4 /* NetworkService.swift */,
+				CA46DD3B25EA2C70001AF2B4 /* NetworkServiceProtocols.swift */,
+				CA46DD4325EA2DBF001AF2B4 /* NetworkService+Protocols.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		CA46DD3E25EA2CCA001AF2B4 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				CA46DD3F25EA2CDA001AF2B4 /* TokenResponse.swift */,
+			);
+			path = Responses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +200,7 @@
 			name = SberCloud;
 			packageProductDependencies = (
 				CA431A9B25E9FBE400393A11 /* SwiftUIX */,
+				CA46DD3825EA2BFE001AF2B4 /* Alamofire */,
 			);
 			productName = SberCloud;
 			productReference = CA431A8725E9417F00393A11 /* SberCloud.app */;
@@ -211,6 +231,7 @@
 			mainGroup = CA431A7E25E9417E00393A11;
 			packageReferences = (
 				CA431A9A25E9FBE300393A11 /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+				CA46DD3725EA2BFE001AF2B4 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = CA431A8825E9417F00393A11 /* Products */;
 			projectDirPath = "";
@@ -245,10 +266,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA46DD4425EA2DBF001AF2B4 /* NetworkService+Protocols.swift in Sources */,
 				CA431AA525E9FE3700393A11 /* SlidingMenuView.swift in Sources */,
 				CA431AD225EA0A2E00393A11 /* Fonts.swift in Sources */,
 				CA431AAF25EA019600393A11 /* UIColor+Hex.swift in Sources */,
 				CA46DD3125EA1DC6001AF2B4 /* AutorizationView.swift in Sources */,
+				CA46DD4025EA2CDA001AF2B4 /* TokenResponse.swift in Sources */,
+				CA46DD3C25EA2C70001AF2B4 /* NetworkServiceProtocols.swift in Sources */,
 				CA431A8B25E9417F00393A11 /* SberCloudApp.swift in Sources */,
 				CA431AAA25E9FE9500393A11 /* MainView.swift in Sources */,
 				CA46DD3525EA2B7F001AF2B4 /* NetworkService.swift in Sources */,
@@ -450,6 +474,14 @@
 				minimumVersion = 0.0.5;
 			};
 		};
+		CA46DD3725EA2BFE001AF2B4 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -457,6 +489,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CA431A9A25E9FBE300393A11 /* XCRemoteSwiftPackageReference "SwiftUIX" */;
 			productName = SwiftUIX;
+		};
+		CA46DD3825EA2BFE001AF2B4 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA46DD3725EA2BFE001AF2B4 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
