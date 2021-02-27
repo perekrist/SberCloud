@@ -7,10 +7,10 @@ import SwiftUI
 
 struct MainView: View {
   var onDidRequestToLogOut: (() -> Void)?
-  let buttons = [ MenuButton(text: "Cloud Eye", action: {print("1")}),
-                  MenuButton(text: "Cloud Trace Service", action: {print("2")}),
-                  MenuButton(text: "Application Operations Management ", action: {print("3")}),
-                  MenuButton(text: "Application Performance Management", action: {print("4")}) ]
+  let buttons = [ MenuButton(image: "eye", text: "Cloud Eye", action: {print("1")}),
+                  MenuButton(image: "trace", text: "Cloud Trace Service", action: {print("2")}),
+                  MenuButton(image: "aom", text: "Application Operations Management ", action: {print("3")}),
+                  MenuButton(image: "apm", text: "Application Performance Management", action: {print("4")}) ]
   @State var menuShown = false
   
   var body: some View {

@@ -13,6 +13,7 @@ extension Font {
   }
   
   static let light16 = Font.custom("SBSansText-Light", size: 16)
+  static let bold16 = Font.custom("SBSansText-Bold", size: 16)
   static let light18 = Font.custom("SBSansText-Light", size: 18)
   static let bold27 = Font.custom("SBSansText-Bold", size: 27)
 }
