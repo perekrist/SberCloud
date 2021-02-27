@@ -1,0 +1,432 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CA431A8B25E9417F00393A11 /* SberCloudApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA431A8A25E9417F00393A11 /* SberCloudApp.swift */; };
+		CA431A8F25E9418500393A11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA431A8E25E9418500393A11 /* Assets.xcassets */; };
+		CA431A9225E9418500393A11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA431A9125E9418500393A11 /* Preview Assets.xcassets */; };
+		CA431A9C25E9FBE400393A11 /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = CA431A9B25E9FBE400393A11 /* SwiftUIX */; };
+		CA431AA525E9FE3700393A11 /* SlidingMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA431AA425E9FE3700393A11 /* SlidingMenuView.swift */; };
+		CA431AAA25E9FE9500393A11 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA431AA925E9FE9500393A11 /* MainView.swift */; };
+		CA431AAF25EA019600393A11 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA431AAE25EA019500393A11 /* UIColor+Hex.swift */; };
+		CA431AD225EA0A2E00393A11 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA431AD125EA0A2E00393A11 /* Fonts.swift */; };
+		CA431AD425EA0E4C00393A11 /* SBSansText-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CA431AB625EA08F800393A11 /* SBSansText-Bold.otf */; };
+		CA431AD625EA0E5600393A11 /* SBSansText-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = CA431ABF25EA08F900393A11 /* SBSansText-Light.otf */; };
+		CA431AD725EA0E5600393A11 /* SBSansText-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CA431ACB25EA08FA00393A11 /* SBSansText-Regular.otf */; };
+		CA431AD825EA0E5600393A11 /* SBSansText-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = CA431AC625EA08F900393A11 /* SBSansText-Heavy.otf */; };
+		CA431AD925EA0E5600393A11 /* SBSansText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = CA431ACC25EA08FA00393A11 /* SBSansText-Medium.otf */; };
+		CA431ADA25EA0E5600393A11 /* SBSansText-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CA431AC725EA08F900393A11 /* SBSansText-Semibold.otf */; };
+		CA431ADB25EA0E5600393A11 /* SBSansText-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = CA431AB825EA08F800393A11 /* SBSansText-Thin.otf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CA431A8725E9417F00393A11 /* SberCloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SberCloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA431A8A25E9417F00393A11 /* SberCloudApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SberCloudApp.swift; sourceTree = "<group>"; };
+		CA431A8E25E9418500393A11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CA431A9125E9418500393A11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CA431A9325E9418500393A11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA431AA425E9FE3700393A11 /* SlidingMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidingMenuView.swift; sourceTree = "<group>"; };
+		CA431AA925E9FE9500393A11 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		CA431AAE25EA019500393A11 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		CA431AB625EA08F800393A11 /* SBSansText-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SBSansText-Bold.otf"; sourceTree = "<group>"; };
+		CA431AB825EA08F800393A11 /* SBSansText-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SBSansText-Thin.otf"; sourceTree = "<group>"; };
+		CA431ABF25EA08F900393A11 /* SBSansText-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SBSansText-Light.otf"; sourceTree = "<group>"; };
+		CA431AC625EA08F900393A11 /* SBSansText-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SBSansText-Heavy.otf"; sourceTree = "<group>"; };
+		CA431AC725EA08F900393A11 /* SBSansText-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SBSansText-Semibold.otf"; sourceTree = "<group>"; };
+		CA431ACB25EA08FA00393A11 /* SBSansText-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SBSansText-Regular.otf"; sourceTree = "<group>"; };
+		CA431ACC25EA08FA00393A11 /* SBSansText-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SBSansText-Medium.otf"; sourceTree = "<group>"; };
+		CA431AD125EA0A2E00393A11 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CA431A8425E9417F00393A11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA431A9C25E9FBE400393A11 /* SwiftUIX in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CA431A7E25E9417E00393A11 = {
+			isa = PBXGroup;
+			children = (
+				CA431A8925E9417F00393A11 /* SberCloud */,
+				CA431A8825E9417F00393A11 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CA431A8825E9417F00393A11 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CA431A8725E9417F00393A11 /* SberCloud.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CA431A8925E9417F00393A11 /* SberCloud */ = {
+			isa = PBXGroup;
+			children = (
+				CA431AB125EA08E000393A11 /* Fonts */,
+				CA431AAD25EA017900393A11 /* Utils */,
+				CA431AA825E9FE8C00393A11 /* MainView */,
+				CA431A9F25E9FD0C00393A11 /* Slide Menu */,
+				CA431A8A25E9417F00393A11 /* SberCloudApp.swift */,
+				CA431A8E25E9418500393A11 /* Assets.xcassets */,
+				CA431A9325E9418500393A11 /* Info.plist */,
+				CA431A9025E9418500393A11 /* Preview Content */,
+			);
+			path = SberCloud;
+			sourceTree = "<group>";
+		};
+		CA431A9025E9418500393A11 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CA431A9125E9418500393A11 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CA431A9F25E9FD0C00393A11 /* Slide Menu */ = {
+			isa = PBXGroup;
+			children = (
+				CA431AA425E9FE3700393A11 /* SlidingMenuView.swift */,
+			);
+			path = "Slide Menu";
+			sourceTree = "<group>";
+		};
+		CA431AA825E9FE8C00393A11 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				CA431AA925E9FE9500393A11 /* MainView.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		CA431AAD25EA017900393A11 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CA431AAE25EA019500393A11 /* UIColor+Hex.swift */,
+				CA431AD125EA0A2E00393A11 /* Fonts.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		CA431AB125EA08E000393A11 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CA431AB625EA08F800393A11 /* SBSansText-Bold.otf */,
+				CA431AC625EA08F900393A11 /* SBSansText-Heavy.otf */,
+				CA431ABF25EA08F900393A11 /* SBSansText-Light.otf */,
+				CA431ACC25EA08FA00393A11 /* SBSansText-Medium.otf */,
+				CA431ACB25EA08FA00393A11 /* SBSansText-Regular.otf */,
+				CA431AC725EA08F900393A11 /* SBSansText-Semibold.otf */,
+				CA431AB825EA08F800393A11 /* SBSansText-Thin.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CA431A8625E9417F00393A11 /* SberCloud */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA431A9625E9418500393A11 /* Build configuration list for PBXNativeTarget "SberCloud" */;
+			buildPhases = (
+				CA431A8325E9417F00393A11 /* Sources */,
+				CA431A8425E9417F00393A11 /* Frameworks */,
+				CA431A8525E9417F00393A11 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SberCloud;
+			packageProductDependencies = (
+				CA431A9B25E9FBE400393A11 /* SwiftUIX */,
+			);
+			productName = SberCloud;
+			productReference = CA431A8725E9417F00393A11 /* SberCloud.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CA431A7F25E9417E00393A11 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					CA431A8625E9417F00393A11 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = CA431A8225E9417E00393A11 /* Build configuration list for PBXProject "SberCloud" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CA431A7E25E9417E00393A11;
+			packageReferences = (
+				CA431A9A25E9FBE300393A11 /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+			);
+			productRefGroup = CA431A8825E9417F00393A11 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CA431A8625E9417F00393A11 /* SberCloud */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CA431A8525E9417F00393A11 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA431AD425EA0E4C00393A11 /* SBSansText-Bold.otf in Resources */,
+				CA431ADA25EA0E5600393A11 /* SBSansText-Semibold.otf in Resources */,
+				CA431AD725EA0E5600393A11 /* SBSansText-Regular.otf in Resources */,
+				CA431AD825EA0E5600393A11 /* SBSansText-Heavy.otf in Resources */,
+				CA431A9225E9418500393A11 /* Preview Assets.xcassets in Resources */,
+				CA431A8F25E9418500393A11 /* Assets.xcassets in Resources */,
+				CA431AD625EA0E5600393A11 /* SBSansText-Light.otf in Resources */,
+				CA431AD925EA0E5600393A11 /* SBSansText-Medium.otf in Resources */,
+				CA431ADB25EA0E5600393A11 /* SBSansText-Thin.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CA431A8325E9417F00393A11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA431AA525E9FE3700393A11 /* SlidingMenuView.swift in Sources */,
+				CA431AD225EA0A2E00393A11 /* Fonts.swift in Sources */,
+				CA431AAF25EA019600393A11 /* UIColor+Hex.swift in Sources */,
+				CA431A8B25E9417F00393A11 /* SberCloudApp.swift in Sources */,
+				CA431AAA25E9FE9500393A11 /* MainView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CA431A9425E9418500393A11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CA431A9525E9418500393A11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CA431A9725E9418500393A11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SberCloud/Preview Content\"";
+				DEVELOPMENT_TEAM = 7NZPBTA9R6;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = SberCloud/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.perekrist.SberCloud;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CA431A9825E9418500393A11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SberCloud/Preview Content\"";
+				DEVELOPMENT_TEAM = 7NZPBTA9R6;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = SberCloud/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.perekrist.SberCloud;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CA431A8225E9417E00393A11 /* Build configuration list for PBXProject "SberCloud" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA431A9425E9418500393A11 /* Debug */,
+				CA431A9525E9418500393A11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA431A9625E9418500393A11 /* Build configuration list for PBXNativeTarget "SberCloud" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA431A9725E9418500393A11 /* Debug */,
+				CA431A9825E9418500393A11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CA431A9A25E9FBE300393A11 /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CA431A9B25E9FBE400393A11 /* SwiftUIX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA431A9A25E9FBE300393A11 /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			productName = SwiftUIX;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = CA431A7F25E9417E00393A11 /* Project object */;
+}
