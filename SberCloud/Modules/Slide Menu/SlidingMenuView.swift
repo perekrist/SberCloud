@@ -48,7 +48,7 @@ struct SlidingMenuView: View {
                 .foregroundColor(Color.green.logo)
             }
             VStack(alignment: .leading) {
-              Text(UserDefaults.standard.string(forKey: "name") ?? "-").bold()
+              Text(UserDefaults.standard.string(forKey: "name") ?? "-").font(Font.Sans18.bold)
               if isAdmin {
                 Text("Admin").font(Font.light13)
               }

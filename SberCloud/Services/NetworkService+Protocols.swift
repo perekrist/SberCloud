@@ -66,6 +66,45 @@ extension NetworkService: CloudTraceServiceNetworkProtocol {
     }
     
   }
+}
+
+extension NetworkService: ApplicationOperationsManagementNetworkProtocol {
+  func saveTemplate(projectID: String, namespace: String, completion: @escaping (EmptyResponse) -> Void) {
+    let headers: HTTPHeaders = [HTTPHeader.authorization(UserDefaults.standard.value(forKey: "token") as? String ?? "")]
+    let parametrs: Parameters = ["project_id" : projectID,
+                                 "namespace": namespace,
+                                 "raw_data": ""]
+    baseRequest(url: "/templates", method: .post, params: parametrs, headers: headers) { response in
+      completion(response)
+    }
+  }
   
+  func getMetricList(projectID: String, clusterName: String, completion: @escaping (MetricsResponse) -> Void) {
+    let headers: HTTPHeaders = [HTTPHeader.authorization(UserDefaults.standard.value(forKey: "token") as? String ?? "")]
+    let parametrs: Parameters = ["project_id" : projectID,
+                                 "cluster_name": clusterName]
+    baseRequest(url: "/aom/metric_list", method: .post, params: parametrs, headers: headers) { response in
+      completion(response)
+    }
+  }
   
+  func getQuery(projectID: String, namespace: String, metricName: String, clusterName: String, completion: @escaping (QueryResponse) -> Void) {
+    let headers: HTTPHeaders = [HTTPHeader.authorization(UserDefaults.standard.value(forKey: "token") as? String ?? "")]
+    let parametrs: Parameters = ["project_id" : projectID,
+                                 "namespace": namespace,
+                                 "metric_name": metricName,
+                                 "cluster_name": clusterName]
+    baseRequest(url: "/aom/query", method: .post, params: parametrs, headers: headers) { response in
+      completion(response)
+    }
+  }
+  
+  func getClustrers(projectID: String, completion: @escaping (ClustersResponse) -> Void) {
+    let headers: HTTPHeaders = [HTTPHeader.authorization(UserDefaults.standard.value(forKey: "token") as? String ?? "")]
+    let parametrs: Parameters = ["project_id" : projectID]
+    
+    baseRequest(url: "/cce/clusters/overview", method: .post, params: parametrs, headers: headers) { response in
+      completion(response)
+    }
+  }
 }

@@ -13,12 +13,12 @@ struct MainView: View {
   @State var points4: [Point] = []
   @State var points5: [Point] = []
   @State var points6: [Point] = []
+  @State var points7: [Point] = []
+  @State var points8: [Point] = []
+  
+  @State var sberStyle = ChartStyle(backgroundColor: .white, accentColor: Color.green.logo, gradientColor: GradientColors.green, textColor: Color.green.logo, legendTextColor: Color.gray.ultraDark, dropShadowColor: Color.green.logo)
   
   @State var projects: [Project] = []
-  
-  var style = ChartStyle(backgroundColor: .white, accentColor: Color.green.logo,
-                         gradientColor: GradientColor(start: Color.green.light, end: Color.green.dark),
-                         textColor: Color.gray.dark, legendTextColor: Color.gray.dark, dropShadowColor: Color.gray.dark)
   
   @State var showSheet = false
   var onDidRequestToLogOut: (() -> Void)?
@@ -83,22 +83,24 @@ struct MainView: View {
           }
           Text(buttons[selectedPage].text).font(Font.Sans18.bold).foregroundColor(Color.gray.dark)
           if selectedPage == 0 {
-            VStack {
-              HStack(spacing: 13) {
-                LineChartView(data: points.map{ $0.average }, title: "upstream_bandwidth_usage", style: style, dropShadow: false)
-                LineChartView(data: points2.map{ $0.average }, title: "upstream_bandwidth", dropShadow: false)
-              }
-              HStack(spacing: 13) {
-                LineChartView(data: points3.map{ $0.average }, title: "up_stream", dropShadow: false)
-                LineChartView(data: points4.map{ $0.average }, title: "downstream_bandwidth", dropShadow: false)
-              }
-              HStack(spacing: 13) {
-                LineChartView(data: points5.map{ $0.average }, title: "down_stream", dropShadow: false)
-                LineChartView(data: points6.map{ $0.average }, title: "rds050_disk_write_throughput", dropShadow: false)
-              }
+            VStack(spacing: 8) {
+              LineView(data: points.map{ $0.average }, title: "Elastic IP and bandwidth", legend: "upstream_bandwidth_usage", style: sberStyle)
+                .padding(.horizontal)
+//              LineView(data: points2.map{ $0.average }, title: "Elastic IP and bandwidth", legend: "upstream_bandwidth", style: sberStyle)
+//                .padding()
+//              LineView(data: points3.map{ $0.average }, title: "Elastic IP and bandwidth", legend: "up_stream", style: sberStyle)
+//                .padding()
+//              LineView(data: points4.map{ $0.average }, title: "Elastic IP and bandwidth", legend: "downstream_bandwidth", style: sberStyle)
+//                .padding()
+//              LineView(data: points5.map{ $0.average }, title: "Elastic IP and bandwidth", legend: "down_stream", style: sberStyle)
+//                .padding()
+              LineView(data: points6.map{ $0.average }, title: "Relational Database Service", legend: "rds050_disk_write_throughput", style: sberStyle)
+                .padding(.horizontal)
             }
           } else if selectedPage == 1 {
             CTSView()
+          } else if selectedPage == 2 {
+            AOMView()
           }
           Spacer()
         }
@@ -144,6 +146,16 @@ struct MainView: View {
                                             namespace: metricsResponse.metrics[6].id ?? "",
                                             metricName: metricsResponse.metrics[6].metricName ?? "") { eyeQueryResponse in
             points6 = eyeQueryResponse.datapoints
+          }
+          NetworkService.shared.getEyeQyery(projectID: projectsResponse.response[0].id ?? "",
+                                            namespace: metricsResponse.metrics[7].id ?? "",
+                                            metricName: metricsResponse.metrics[7].metricName ?? "") { eyeQueryResponse in
+            points7 = eyeQueryResponse.datapoints
+          }
+          NetworkService.shared.getEyeQyery(projectID: projectsResponse.response[0].id ?? "",
+                                            namespace: metricsResponse.metrics[8].id ?? "",
+                                            metricName: metricsResponse.metrics[8].metricName ?? "") { eyeQueryResponse in
+            points7 = eyeQueryResponse.datapoints
           }
         }
       }

@@ -34,7 +34,10 @@ protocol CloudTraceServiceNetworkProtocol {
 // MARK: - Application Operations Management
 
 protocol ApplicationOperationsManagementNetworkProtocol {
-  
+  func getClustrers(projectID: String, completion: @escaping (ClustersResponse) -> Void)
+  func getMetricList(projectID: String, clusterName: String, completion: @escaping (MetricsResponse) -> Void)
+  func getQuery(projectID: String, namespace: String, metricName: String, clusterName: String, completion: @escaping (QueryResponse) -> Void)
+  func saveTemplate(projectID: String, namespace: String, completion: @escaping (EmptyResponse) -> Void)
 }
 
 // MARK: - Application Performance Management

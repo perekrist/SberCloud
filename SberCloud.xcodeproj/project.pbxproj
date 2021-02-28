@@ -40,6 +40,10 @@
 		CA46DD6825EB5FC4001AF2B4 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46DD6725EB5FC4001AF2B4 /* Alert.swift */; };
 		CA46DD6D25EB696F001AF2B4 /* Trace.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46DD6C25EB696E001AF2B4 /* Trace.swift */; };
 		CA46DD7125EB6C65001AF2B4 /* CTSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46DD7025EB6C65001AF2B4 /* CTSView.swift */; };
+		CA46DD7525EB770F001AF2B4 /* ClustersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46DD7425EB770E001AF2B4 /* ClustersResponse.swift */; };
+		CA46DD7825EB771E001AF2B4 /* Cluster.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46DD7725EB771E001AF2B4 /* Cluster.swift */; };
+		CA46DD7C25EB77AC001AF2B4 /* AOMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46DD7B25EB77AC001AF2B4 /* AOMView.swift */; };
+		CA46DD8025EB9133001AF2B4 /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46DD7F25EB9133001AF2B4 /* EmptyResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +79,10 @@
 		CA46DD6725EB5FC4001AF2B4 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		CA46DD6C25EB696E001AF2B4 /* Trace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trace.swift; sourceTree = "<group>"; };
 		CA46DD7025EB6C65001AF2B4 /* CTSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTSView.swift; sourceTree = "<group>"; };
+		CA46DD7425EB770E001AF2B4 /* ClustersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClustersResponse.swift; sourceTree = "<group>"; };
+		CA46DD7725EB771E001AF2B4 /* Cluster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cluster.swift; sourceTree = "<group>"; };
+		CA46DD7B25EB77AC001AF2B4 /* AOMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOMView.swift; sourceTree = "<group>"; };
+		CA46DD7F25EB9133001AF2B4 /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +183,7 @@
 		CA46DD2E25EA1D97001AF2B4 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CA46DD7A25EB7798001AF2B4 /* AOM */,
 				CA46DD6F25EB6C57001AF2B4 /* CTS */,
 				CA46DD4F25EA516B001AF2B4 /* Bottom Menu */,
 				CA46DD2F25EA1DAA001AF2B4 /* Aitorization */,
@@ -210,6 +219,8 @@
 				CA46DD4625EA3CCE001AF2B4 /* ProjectsResponse.swift */,
 				CA46DD5725EA6D37001AF2B4 /* MetricsResponse.swift */,
 				CA46DD5D25EA6E5D001AF2B4 /* EyeQueryResponse.swift */,
+				CA46DD7425EB770E001AF2B4 /* ClustersResponse.swift */,
+				CA46DD7F25EB9133001AF2B4 /* EmptyResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -221,6 +232,7 @@
 				CA46DD5425EA6CFC001AF2B4 /* Metric.swift */,
 				CA46DD5A25EA6DED001AF2B4 /* Point.swift */,
 				CA46DD6C25EB696E001AF2B4 /* Trace.swift */,
+				CA46DD7725EB771E001AF2B4 /* Cluster.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -239,6 +251,14 @@
 				CA46DD7025EB6C65001AF2B4 /* CTSView.swift */,
 			);
 			path = CTS;
+			sourceTree = "<group>";
+		};
+		CA46DD7A25EB7798001AF2B4 /* AOM */ = {
+			isa = PBXGroup;
+			children = (
+				CA46DD7B25EB77AC001AF2B4 /* AOMView.swift */,
+			);
+			path = AOM;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,20 +347,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA46DD7825EB771E001AF2B4 /* Cluster.swift in Sources */,
 				CA46DD5B25EA6DED001AF2B4 /* Point.swift in Sources */,
 				CA46DD4725EA3CCE001AF2B4 /* ProjectsResponse.swift in Sources */,
 				CA46DD5825EA6D37001AF2B4 /* MetricsResponse.swift in Sources */,
 				CA46DD7125EB6C65001AF2B4 /* CTSView.swift in Sources */,
 				CA46DD4425EA2DBF001AF2B4 /* NetworkService+Protocols.swift in Sources */,
+				CA46DD7525EB770F001AF2B4 /* ClustersResponse.swift in Sources */,
 				CA431AA525E9FE3700393A11 /* SlidingMenuView.swift in Sources */,
 				CA46DD6D25EB696F001AF2B4 /* Trace.swift in Sources */,
 				CA46DD6825EB5FC4001AF2B4 /* Alert.swift in Sources */,
 				CA431AD225EA0A2E00393A11 /* Fonts.swift in Sources */,
 				CA431AAF25EA019600393A11 /* UIColor+Hex.swift in Sources */,
 				CA46DD5525EA6CFC001AF2B4 /* Metric.swift in Sources */,
+				CA46DD8025EB9133001AF2B4 /* EmptyResponse.swift in Sources */,
 				CA46DD3125EA1DC6001AF2B4 /* AutorizationView.swift in Sources */,
 				CA46DD5125EA517F001AF2B4 /* BottomMenuView.swift in Sources */,
 				CA46DD4025EA2CDA001AF2B4 /* TokenResponse.swift in Sources */,
+				CA46DD7C25EB77AC001AF2B4 /* AOMView.swift in Sources */,
 				CA46DD6525EB5F7A001AF2B4 /* RoundedShape.swift in Sources */,
 				CA46DD3C25EA2C70001AF2B4 /* NetworkServiceProtocols.swift in Sources */,
 				CA431A8B25E9417F00393A11 /* SberCloudApp.swift in Sources */,

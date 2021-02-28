@@ -20,10 +20,11 @@ struct AutorizationView: View {
                      startPoint: .bottomLeading,
                      endPoint: .topTrailing).edgesIgnoringSafeArea(.all)
       VStack {
-        Image("bg")
+        Image("patern")
           .resizable()
           .edgesIgnoringSafeArea(.all)
-          .scaledToFit()
+          .scaledToFill()
+          
         Spacer()
       }
       VStack {
