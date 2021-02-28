@@ -85,16 +85,16 @@ struct MainView: View {
           if selectedPage == 0 {
             VStack {
               HStack(spacing: 13) {
-                LineChartView(data: points.map{ $0.min }, title: "upstream_bandwidth_usage", style: style, dropShadow: false)
-                LineChartView(data: points2.map{ $0.min }, title: "upstream_bandwidth", dropShadow: false)
+                LineChartView(data: points.map{ $0.average }, title: "upstream_bandwidth_usage", style: style, dropShadow: false)
+                LineChartView(data: points2.map{ $0.average }, title: "upstream_bandwidth", dropShadow: false)
               }
               HStack(spacing: 13) {
-                LineChartView(data: points3.map{ $0.min }, title: "up_stream", dropShadow: false)
-                LineChartView(data: points4.map{ $0.min }, title: "downstream_bandwidth", dropShadow: false)
+                LineChartView(data: points3.map{ $0.average }, title: "up_stream", dropShadow: false)
+                LineChartView(data: points4.map{ $0.average }, title: "downstream_bandwidth", dropShadow: false)
               }
               HStack(spacing: 13) {
-                LineChartView(data: points5.map{ $0.min }, title: "down_stream", dropShadow: false)
-                LineChartView(data: points6.map{ $0.min }, title: "rds050_disk_write_throughput", dropShadow: false)
+                LineChartView(data: points5.map{ $0.average }, title: "down_stream", dropShadow: false)
+                LineChartView(data: points6.map{ $0.average }, title: "rds050_disk_write_throughput", dropShadow: false)
               }
             }
           } else if selectedPage == 1 {
