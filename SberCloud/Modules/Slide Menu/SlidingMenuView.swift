@@ -24,10 +24,12 @@ struct SlidingMenuView: View {
   
   var body: some View {
     ZStack {
-      LinearGradient(gradient: Gradient(colors: [Color.green.light,
-                                                 Color.green.dark]),
-                     startPoint: .bottomLeading,
-                     endPoint: .topTrailing).edgesIgnoringSafeArea(.all)
+      LinearGradient(gradient: Gradient(colors: [Color.green.dark2,
+                                                 Color.green.light2,
+                                                 Color.green.light2,
+                                                 Color.green.light2]),
+                     startPoint: .topLeading,
+                     endPoint: .bottomTrailing).edgesIgnoringSafeArea(.all)
       HStack {
         VStack(alignment: .leading, spacing: 30) {
           Spacer().frame(height: UIApplication.shared.windows.first?.safeAreaInsets.top)
@@ -65,7 +67,7 @@ struct SlidingMenuView: View {
                   Image(thisButton.image)
                   Text(thisButton.text)
                     .multilineTextAlignment(.leading)
-                }.padding(.leading, 20).foregroundColor(.white).font(Font.Sans18.light)
+                }.padding(.leading, 20).foregroundColor(.white).font(Font.Sans18.bold)
               }
             } else {
               HStack {
@@ -82,7 +84,7 @@ struct SlidingMenuView: View {
           }) {
             HStack {
               Text("Log Out")
-            }.padding(.leading, 50).foregroundColor(.white).font(Font.Sans18.light)
+            }.padding(.leading, 50).foregroundColor(.white).font(Font.Sans18.bold)
           }
           Spacer()
         }.frame(width: 300)

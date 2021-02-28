@@ -13,10 +13,10 @@ struct Templates: View {
   
     var body: some View {
       VStack {
-        LineView(data: points.map{ $0.average }, title: "Cluster \"utyrtrdf\"", legend: "PAAS.CONTAINER: status", style: sberStyle)
+        LineView(data: points.map{ $0.average }, title: "Cluster \"Primary Cluster\"", legend: "PAAS.CONTAINER: status", style: sberStyle)
           .padding(.horizontal)
       }.onAppear {
-        NetworkService.shared.getQuery(projectID: projectID, namespace: "PAAS.CONTAINER", metricName: "status", clusterName: "utyrtrdf") { response in
+        NetworkService.shared.getQuery(projectID: projectID, namespace: "PAAS.CONTAINER", metricName: "status", clusterName: "primary_cluster") { response in
           self.points = response.points
         }
       }

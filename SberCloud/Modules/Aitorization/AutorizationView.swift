@@ -20,15 +20,15 @@ struct AutorizationView: View {
                      startPoint: .bottomLeading,
                      endPoint: .topTrailing).edgesIgnoringSafeArea(.all)
       VStack {
-        Image("patern")
+        Image("bg")
           .resizable()
-          .edgesIgnoringSafeArea(.all)
-          .scaledToFill()
+          .edgesIgnoringSafeArea(.top)
+          .scaledToFit()
           
         Spacer()
       }
       VStack {
-        Spacer(minLength: 240)
+        Spacer(minLength: 310)
         ZStack {
           Color.white.opacity(0.24).blur(radius: 32)
           VStack {

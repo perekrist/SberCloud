@@ -28,14 +28,14 @@ struct AOMView: View {
           .clipShape(Rounded(size: 20, corners: .allCorners))
           .padding(.horizontal, 20)
           .onTapGesture {
-            NetworkService.shared.getQuery(projectID: projectID, namespace: "PAAS.CONTAINER", metricName: "status", clusterName: "utyrtrdf") { response in
+            NetworkService.shared.getQuery(projectID: projectID, namespace: "PAAS.CONTAINER", metricName: "status", clusterName: "primary_cluster") { response in
               self.points = response.points
               self.showDetails.toggle()
             }
           }
         }
         if showDetails {
-          LineView(data: points.map{ $0.average }, title: "Cluster \"utyrtrdf\"", legend: "PAAS.CONTAINER: status", style: sberStyle)
+          LineView(data: points.map{ $0.average }, title: "Cluster \"Primary Cluster\"", legend: "PAAS.CONTAINER: status", style: sberStyle)
             .padding(.horizontal)
           
           Button {
