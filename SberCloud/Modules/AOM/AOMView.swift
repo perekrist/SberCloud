@@ -42,6 +42,7 @@ struct AOMView: View {
 //            NetworkService.shared.saveTemplate(projectID: projectID, namespace: "PAAS.CONTAINER") { _ in
 //
 //            }
+            Alert.shared.showAlert(error: "Saved to templates!")
           } label: {
             Text("Save to snapshot")
               .foregroundColor(Color.gray.ultraDark)

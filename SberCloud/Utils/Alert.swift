@@ -12,7 +12,7 @@ class Alert {
   }()
   
   func showAlert(error: String) {
-    let alertController = UIAlertController(title: "Ooops...", message: error, preferredStyle: .alert)
+    let alertController = UIAlertController(title: error, message: nil, preferredStyle: .alert)
     let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
     alertController.addAction(okAction)
     

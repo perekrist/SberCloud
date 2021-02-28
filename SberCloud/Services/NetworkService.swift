@@ -36,11 +36,13 @@ class NetworkService {
                     print("------------------------------------------")
                     completion(decodedData)
                   } catch {
+                    Alert.shared.showAlert(error: error.localizedDescription)
                     print(error)
                     print("------------------------------------------")
                     return
                   }
                 case .failure(let error):
+                  Alert.shared.showAlert(error: error.localizedDescription)
                   print(error.localizedDescription)
                   print("------------------------------------------")
                   return
