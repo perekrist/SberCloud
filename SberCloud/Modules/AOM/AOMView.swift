@@ -39,9 +39,9 @@ struct AOMView: View {
             .padding(.horizontal)
           
           Button {
-            NetworkService.shared.saveTemplate(projectID: projectID, namespace: "PAAS.CONTAINER") { _ in
-              
-            }
+//            NetworkService.shared.saveTemplate(projectID: projectID, namespace: "PAAS.CONTAINER") { _ in
+//
+//            }
           } label: {
             Text("Save to snapshot")
               .foregroundColor(Color.gray.ultraDark)

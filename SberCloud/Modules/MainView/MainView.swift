@@ -101,6 +101,8 @@ struct MainView: View {
             CTSView()
           } else if selectedPage == 2 {
             AOMView()
+          } else if selectedPage == 4 {
+            Templates()
           }
           Spacer()
         }

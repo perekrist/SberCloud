@@ -44,6 +44,7 @@
 		CA46DD7825EB771E001AF2B4 /* Cluster.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46DD7725EB771E001AF2B4 /* Cluster.swift */; };
 		CA46DD7C25EB77AC001AF2B4 /* AOMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46DD7B25EB77AC001AF2B4 /* AOMView.swift */; };
 		CA46DD8025EB9133001AF2B4 /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46DD7F25EB9133001AF2B4 /* EmptyResponse.swift */; };
+		CA46DD8425EB9247001AF2B4 /* Templates.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA46DD8325EB9247001AF2B4 /* Templates.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,7 @@
 		CA46DD7725EB771E001AF2B4 /* Cluster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cluster.swift; sourceTree = "<group>"; };
 		CA46DD7B25EB77AC001AF2B4 /* AOMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AOMView.swift; sourceTree = "<group>"; };
 		CA46DD7F25EB9133001AF2B4 /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
+		CA46DD8325EB9247001AF2B4 /* Templates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Templates.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 		CA46DD2E25EA1D97001AF2B4 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CA46DD8225EB91E8001AF2B4 /* Tepmlates */,
 				CA46DD7A25EB7798001AF2B4 /* AOM */,
 				CA46DD6F25EB6C57001AF2B4 /* CTS */,
 				CA46DD4F25EA516B001AF2B4 /* Bottom Menu */,
@@ -259,6 +262,14 @@
 				CA46DD7B25EB77AC001AF2B4 /* AOMView.swift */,
 			);
 			path = AOM;
+			sourceTree = "<group>";
+		};
+		CA46DD8225EB91E8001AF2B4 /* Tepmlates */ = {
+			isa = PBXGroup;
+			children = (
+				CA46DD8325EB9247001AF2B4 /* Templates.swift */,
+			);
+			path = Tepmlates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,6 +367,7 @@
 				CA46DD7525EB770F001AF2B4 /* ClustersResponse.swift in Sources */,
 				CA431AA525E9FE3700393A11 /* SlidingMenuView.swift in Sources */,
 				CA46DD6D25EB696F001AF2B4 /* Trace.swift in Sources */,
+				CA46DD8425EB9247001AF2B4 /* Templates.swift in Sources */,
 				CA46DD6825EB5FC4001AF2B4 /* Alert.swift in Sources */,
 				CA431AD225EA0A2E00393A11 /* Fonts.swift in Sources */,
 				CA431AAF25EA019600393A11 /* UIColor+Hex.swift in Sources */,
