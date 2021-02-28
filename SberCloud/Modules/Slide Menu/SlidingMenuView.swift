@@ -16,6 +16,9 @@ struct MenuButton: Identifiable {
 struct SlidingMenuView: View {
   var onDidRequestToLogOut: (() -> Void)?
   var buttons: [MenuButton]
+  
+  var isAdmin = UserDefaults.standard.value(forKey: "admin") as? Bool ?? false
+  
   var body: some View {
     ZStack {
       LinearGradient(gradient: Gradient(colors: [Color.green.light,
@@ -33,8 +36,12 @@ struct SlidingMenuView: View {
                 .font(Font.bold16)
                 .foregroundColor(Color.green.logo)
             }
-            
-            Text(UserDefaults.standard.string(forKey: "name") ?? "-").bold()
+            HStack {
+              Text(UserDefaults.standard.string(forKey: "name") ?? "-").bold()
+              if isAdmin {
+                Text("Admin").font(Font.light13)
+              }
+            }
           }.padding(.leading, 20).foregroundColor(.white).font(Font.Sans18.bold)
           Divider().background(Color.white).frame(width: 235, height: 2).padding(.leading, 20)
           ForEach(buttons, id: \.id) { thisButton in
@@ -49,6 +56,13 @@ struct SlidingMenuView: View {
             }
           }
           Divider().background(Color.white).frame(width: 235, height: 2).padding(.leading, 20)
+          Button(action: {
+            // Сhart snapshot
+          }) {
+            HStack {
+              Text("Сhart snapshot")
+            }.padding(.leading, 20).foregroundColor(.white).font(Font.Sans18.light)
+          }
           Button(action: {
             UserDefaults.standard.set("", forKey: "token")
             onDidRequestToLogOut?()

@@ -9,6 +9,7 @@ import SwiftUIX
 struct BottomSheet: View {
   var edges = UIApplication.shared.windows.first?.safeAreaInsets
   @State var showSheet: Bool
+  @State var projects: [Project]
   
   @State var offset: CGFloat = 0
   
@@ -16,19 +17,27 @@ struct BottomSheet: View {
     VStack {
       Spacer()
       VStack(spacing: 12) {
-        HStack(spacing:  5) {
-          Capsule()
-            .fill(Color(UIColor(hexString: "ECECEC")))
-            .frame(width: 60, height: 5)
+        Capsule()
+          .fill(Color.gray.dark.opacity(0.2))
+          .frame(width: 60, height: 5)
+          .padding(.bottom)
+        VStack(alignment: .leading, spacing: 33) {
+          ForEach(projects, id: \.self) { project in
+            HStack {
+              Text(project.name ?? "").font(Font.bold16)
+                .foregroundColor(Color.gray.dark)
+              Spacer()
+            }.padding(.horizontal, 20)
+          }
         }
         Spacer()
-          .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 2)
       }
       .padding(.top)
       .background(BlurView())
       .offset(y: offset)
       .gesture(DragGesture().onChanged(onChanged(value:)).onEnded(onEnded(value:)))
       .offset(y: showSheet ? 0 : UIScreen.main.bounds.height)
+      .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 2)
     }
     .ignoresSafeArea()
     .background(

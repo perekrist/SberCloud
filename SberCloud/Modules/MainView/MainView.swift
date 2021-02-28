@@ -14,6 +14,12 @@ struct MainView: View {
   @State var points5: [Point] = []
   @State var points6: [Point] = []
   
+  @State var projects: [Project] = []
+  
+  var style = ChartStyle(backgroundColor: .white, accentColor: Color.green.logo,
+                         gradientColor: GradientColor(start: Color.green.light, end: Color.green.dark),
+                         textColor: Color.gray.dark, legendTextColor: Color.gray.dark, dropShadowColor: Color.gray.dark)
+  
   @State var showSheet = false
   var onDidRequestToLogOut: (() -> Void)?
   let buttons = [ MenuButton(image: "eye", text: "Cloud Eye", action: {print("1")}),
@@ -34,7 +40,7 @@ struct MainView: View {
             Button(action: {
               self.menuShown.toggle()
             }) {
-              Image(systemName: "ellipsis")
+              Image(systemName: "equal")
                 .padding()
                 .foregroundColor(Color.gray.ultraDark)
             }
@@ -53,16 +59,16 @@ struct MainView: View {
             
           }
           HStack(spacing: 13) {
-            LineChartView(data: points.map{ $0.min }, title: "upstream_bandwidth_usage")
-            LineChartView(data: points2.map{ $0.min }, title: "upstream_bandwidth")
+            LineChartView(data: points.map{ $0.min }, title: "upstream_bandwidth_usage", style: style, dropShadow: false)
+            LineChartView(data: points2.map{ $0.min }, title: "upstream_bandwidth", dropShadow: false)
           }
           HStack(spacing: 13) {
-            LineChartView(data: points3.map{ $0.min }, title: "up_stream")
-            LineChartView(data: points4.map{ $0.min }, title: "downstream_bandwidth")
+            LineChartView(data: points3.map{ $0.min }, title: "up_stream", dropShadow: false)
+            LineChartView(data: points4.map{ $0.min }, title: "downstream_bandwidth", dropShadow: false)
           }
           HStack(spacing: 13) {
-            LineChartView(data: points5.map{ $0.min }, title: "down_stream")
-            LineChartView(data: points6.map{ $0.min }, title: "rds050_disk_write_throughput")
+            LineChartView(data: points5.map{ $0.min }, title: "down_stream", dropShadow: false)
+            LineChartView(data: points6.map{ $0.min }, title: "rds050_disk_write_throughput", dropShadow: false)
           }
           Spacer()
         }
@@ -73,10 +79,11 @@ struct MainView: View {
       .offset(x: menuShown ? 300 : 0)
       .animation(.easeInOut(duration: 0.3))
       if showSheet {
-        BottomSheet(showSheet: showSheet)
+        BottomSheet(showSheet: showSheet, projects: projects)
       }
     }.onAppear {
       NetworkService.shared.getProjects { projectsResponse in
+        projects = projectsResponse.response
         NetworkService.shared.getMetricList(projectID: projectsResponse.response[0].id ?? "") { metricsResponse in
           NetworkService.shared.getEyeQyery(projectID: projectsResponse.response[0].id ?? "",
                                             namespace: metricsResponse.metrics[1].id ?? "",

@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct Project: Codable {
+struct Project: Codable, Hashable {
   private enum CodingKeys: String, CodingKey {
     case id, description, name
   }
