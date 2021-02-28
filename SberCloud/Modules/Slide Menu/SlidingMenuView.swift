@@ -10,11 +10,14 @@ struct MenuButton: Identifiable {
   var id = UUID()
   var image: String
   var text: String
-  var action: () -> Void
+  var isEnable: Bool
+  var number: Int
 }
 
 struct SlidingMenuView: View {
   var onDidRequestToLogOut: (() -> Void)?
+  var onDidRequestHideMenu: (() -> Void)?
+  var onDidButtonTapped: ((Int) -> Void)?
   var buttons: [MenuButton]
   
   var isAdmin = UserDefaults.standard.value(forKey: "admin") as? Bool ?? false
@@ -28,7 +31,15 @@ struct SlidingMenuView: View {
       HStack {
         VStack(alignment: .leading, spacing: 30) {
           Spacer().frame(height: UIApplication.shared.windows.first?.safeAreaInsets.top)
-          HStack {
+          VStack(alignment: .leading) {
+            Button(action: {
+              onDidRequestHideMenu?()
+            }) {
+              Image(systemName: "xmark")
+                .foregroundColor(.white)
+                .padding([.horizontal, .bottom])
+            }
+            HStack {
             ZStack {
               Circle()
                 .frame(width: 50, height: 50)
@@ -36,33 +47,35 @@ struct SlidingMenuView: View {
                 .font(Font.bold16)
                 .foregroundColor(Color.green.logo)
             }
-            HStack {
+            VStack(alignment: .leading) {
               Text(UserDefaults.standard.string(forKey: "name") ?? "-").bold()
               if isAdmin {
                 Text("Admin").font(Font.light13)
               }
             }
           }.padding(.leading, 20).foregroundColor(.white).font(Font.Sans18.bold)
+          }
           Divider().background(Color.white).frame(width: 235, height: 2).padding(.leading, 20)
           ForEach(buttons, id: \.id) { thisButton in
-            Button(action: {
-              thisButton.action()
-            }) {
+            if thisButton.isEnable {
+              Button(action: {
+                onDidButtonTapped?(thisButton.number)
+              }) {
+                HStack {
+                  Image(thisButton.image)
+                  Text(thisButton.text)
+                    .multilineTextAlignment(.leading)
+                }.padding(.leading, 20).foregroundColor(.white).font(Font.Sans18.light)
+              }
+            } else {
               HStack {
                 Image(thisButton.image)
                 Text(thisButton.text)
                   .multilineTextAlignment(.leading)
-              }.padding(.leading, 20).foregroundColor(.white).font(Font.Sans18.light)
+              }.padding(.leading, 20).foregroundColor(Color.white.opacity(0.5)).font(Font.Sans18.light)
             }
           }
           Divider().background(Color.white).frame(width: 235, height: 2).padding(.leading, 20)
-          Button(action: {
-            // Сhart snapshot
-          }) {
-            HStack {
-              Text("Сhart snapshot")
-            }.padding(.leading, 20).foregroundColor(.white).font(Font.Sans18.light)
-          }
           Button(action: {
             UserDefaults.standard.set("", forKey: "token")
             onDidRequestToLogOut?()

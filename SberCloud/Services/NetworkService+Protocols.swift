@@ -18,7 +18,16 @@ extension NetworkService: AuthorizationNetworkProtocol {
 }
 
 extension NetworkService: ChartsNetworkProtocol {
-  func getMetricList(projectID: String, completion: @escaping (MetricsResponse) -> Void) {
+  func getProjects(completion: @escaping (ProjectsResponse) -> Void) {
+    let headers: HTTPHeaders = [HTTPHeader.authorization(UserDefaults.standard.value(forKey: "token") as? String ?? "")]
+    baseRequest(url: "/projects", method: .post, headers: headers) { response in
+      completion(response)
+    }
+  }
+}
+
+extension NetworkService: CloudEyeNetworkProtocol {
+  func getEyeMetricList(projectID: String, completion: @escaping (MetricsResponse) -> Void) {
     let headers: HTTPHeaders = [HTTPHeader.authorization(UserDefaults.standard.value(forKey: "token") as? String ?? "")]
     let parametrs: Parameters = ["project_id" : projectID]
     baseRequest(url: "/eye/metric_list", method: .post, params: parametrs, headers: headers) { response in
@@ -35,11 +44,28 @@ extension NetworkService: ChartsNetworkProtocol {
       completion(response)
     }
   }
-  
-  func getProjects(completion: @escaping (ProjectsResponse) -> Void) {
+}
+
+extension NetworkService: CloudTraceServiceNetworkProtocol {
+  func getTraces(projectID: String, duration: Int, completion: @escaping ([Trace]) -> Void) {
     let headers: HTTPHeaders = [HTTPHeader.authorization(UserDefaults.standard.value(forKey: "token") as? String ?? "")]
-    baseRequest(url: "/projects", method: .post, headers: headers) { response in
+    let parametrs: Parameters = ["project_id" : projectID,
+                                 "duration_sec": duration]
+    baseRequest(url: "/cts/overview", method: .post, params: parametrs, headers: headers) { response in
       completion(response)
     }
   }
+  
+  func getTraceDetails(projectID: String, traceID: String, duration: Int, completion: @escaping (TraceDetails) -> Void) {
+    let headers: HTTPHeaders = [HTTPHeader.authorization(UserDefaults.standard.value(forKey: "token") as? String ?? "")]
+    let parametrs: Parameters = ["project_id" : projectID,
+                                 "duration_sec": duration,
+                                 "trace_id": traceID]
+    baseRequest(url: "/cts/detail", method: .post, params: parametrs, headers: headers) { response in
+      completion(response)
+    }
+    
+  }
+  
+  
 }

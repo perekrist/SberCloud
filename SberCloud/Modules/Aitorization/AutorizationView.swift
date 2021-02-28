@@ -84,6 +84,7 @@ struct AutorizationView: View {
             UserDefaults.standard.setValue(isAdministrator, forKey: "admin")
             onDidAutorize?()
           }
+          onDidAutorize?()
         }) {
           Text("Log in")
             .foregroundColor(Color.gray.ultraDark)

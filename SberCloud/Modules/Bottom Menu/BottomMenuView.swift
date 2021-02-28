@@ -25,7 +25,7 @@ struct BottomSheet: View {
           ForEach(projects, id: \.self) { project in
             HStack {
               Text(project.name ?? "").font(Font.bold16)
-                .foregroundColor(Color.gray.dark)
+                .foregroundColor(projects.first?.id == project.id ? Color.green.logo : Color.gray.dark)
               Spacer()
             }.padding(.horizontal, 20)
           }
@@ -33,7 +33,7 @@ struct BottomSheet: View {
         Spacer()
       }
       .padding(.top)
-      .background(BlurView())
+      .background(BlurView().clipShape(Rounded(size: 30, corners: [.topLeft, .topRight])))
       .offset(y: offset)
       .gesture(DragGesture().onChanged(onChanged(value:)).onEnded(onEnded(value:)))
       .offset(y: showSheet ? 0 : UIScreen.main.bounds.height)

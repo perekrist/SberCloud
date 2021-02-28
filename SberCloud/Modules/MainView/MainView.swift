@@ -22,18 +22,29 @@ struct MainView: View {
   
   @State var showSheet = false
   var onDidRequestToLogOut: (() -> Void)?
-  let buttons = [ MenuButton(image: "eye", text: "Cloud Eye", action: {print("1")}),
-                  MenuButton(image: "trace", text: "Cloud Trace Service", action: {print("2")}),
-                  MenuButton(image: "aom", text: "Application Operations Management ", action: {print("3")}),
-                  MenuButton(image: "apm", text: "Application Performance Management", action: {print("4")}) ]
+  let buttons = [ MenuButton(image: "eye", text: "Cloud Eye", isEnable: true, number: 0),
+                  MenuButton(image: "trace", text: "Cloud Trace Service", isEnable: true, number: 1),
+                  MenuButton(image: "aom", text: "Application Operations Management ", isEnable: true, number: 2),
+                  MenuButton(image: "apm", text: "Application Performance Management", isEnable: false, number: 3),
+                  MenuButton(image: "", text: "Сhart snapshot", isEnable: true, number: 4)]
   @State var menuShown = false
+  
+  @State var selectedPage: Int = 0 {
+    didSet {
+      menuShown.toggle()
+    }
+  }
   
   var body: some View {
     ZStack {
-      SlidingMenuView(onDidRequestToLogOut: onDidRequestToLogOut, buttons: buttons)
+      SlidingMenuView(onDidRequestToLogOut: onDidRequestToLogOut, onDidRequestHideMenu: {
+        self.menuShown.toggle()
+      }, onDidButtonTapped: { num in
+        selectedPage = num
+      }, buttons: buttons)
       //Foreground View
       ZStack {
-        Color.white.edgesIgnoringSafeArea(.all)
+        Color.gray.ultraLight.edgesIgnoringSafeArea(.all)
         VStack {
           Spacer().frame(height:UIApplication.shared.windows.first?.safeAreaInsets.top)
           HStack {
@@ -47,28 +58,47 @@ struct MainView: View {
             Spacer()
             Button(action: {
               withAnimation {
+                
+              }
+            }) {
+              HStack {
+                Image(systemName: "slider.horizontal.3")
+              }.foregroundColor(Color.gray.ultraDark)
+              .padding()
+            }
+            
+            
+            Button(action: {
+              withAnimation {
                 self.showSheet.toggle()
               }
             }) {
               HStack {
-                Text("ru-moscow-1").font(Font.bold16)
+                Text(projects.first?.name ?? "-").font(Font.bold16)
                 Image(systemName: "chevron.down")
               }.foregroundColor(Color.gray.ultraDark)
               .padding()
             }
             
           }
-          HStack(spacing: 13) {
-            LineChartView(data: points.map{ $0.min }, title: "upstream_bandwidth_usage", style: style, dropShadow: false)
-            LineChartView(data: points2.map{ $0.min }, title: "upstream_bandwidth", dropShadow: false)
-          }
-          HStack(spacing: 13) {
-            LineChartView(data: points3.map{ $0.min }, title: "up_stream", dropShadow: false)
-            LineChartView(data: points4.map{ $0.min }, title: "downstream_bandwidth", dropShadow: false)
-          }
-          HStack(spacing: 13) {
-            LineChartView(data: points5.map{ $0.min }, title: "down_stream", dropShadow: false)
-            LineChartView(data: points6.map{ $0.min }, title: "rds050_disk_write_throughput", dropShadow: false)
+          Text(buttons[selectedPage].text).font(Font.Sans18.bold).foregroundColor(Color.gray.dark)
+          if selectedPage == 0 {
+            VStack {
+              HStack(spacing: 13) {
+                LineChartView(data: points.map{ $0.min }, title: "upstream_bandwidth_usage", style: style, dropShadow: false)
+                LineChartView(data: points2.map{ $0.min }, title: "upstream_bandwidth", dropShadow: false)
+              }
+              HStack(spacing: 13) {
+                LineChartView(data: points3.map{ $0.min }, title: "up_stream", dropShadow: false)
+                LineChartView(data: points4.map{ $0.min }, title: "downstream_bandwidth", dropShadow: false)
+              }
+              HStack(spacing: 13) {
+                LineChartView(data: points5.map{ $0.min }, title: "down_stream", dropShadow: false)
+                LineChartView(data: points6.map{ $0.min }, title: "rds050_disk_write_throughput", dropShadow: false)
+              }
+            }
+          } else if selectedPage == 1 {
+            CTSView()
           }
           Spacer()
         }
@@ -84,7 +114,7 @@ struct MainView: View {
     }.onAppear {
       NetworkService.shared.getProjects { projectsResponse in
         projects = projectsResponse.response
-        NetworkService.shared.getMetricList(projectID: projectsResponse.response[0].id ?? "") { metricsResponse in
+        NetworkService.shared.getEyeMetricList(projectID: projectsResponse.response[0].id ?? "") { metricsResponse in
           NetworkService.shared.getEyeQyery(projectID: projectsResponse.response[0].id ?? "",
                                             namespace: metricsResponse.metrics[1].id ?? "",
                                             metricName: metricsResponse.metrics[1].metricName ?? "") { eyeQueryResponse in
@@ -117,6 +147,7 @@ struct MainView: View {
           }
         }
       }
+      
     }
   }
 }
